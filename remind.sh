@@ -46,6 +46,10 @@ fi
 
 (( time = ( h*60*60 ) + ( m*60 ) + s ))
 
-sleep $time
+sleep_and_notify() {
+    sleep $time ; notify-send $t "$o"
+}
 
-notify-send $t "$o"
+sleep_and_notify &
+
+exit 0
